@@ -33,8 +33,9 @@ class Heatmap extends React.Component {
     // compare nextProp and this.props determine
     // specify prop need to be refresh
     // alse, assure heatmap is loaded
+    const currentProps = this.props;
     this.resolveHeatmap().then(() => {
-      this.refreshHeatmap(nextProps);
+      this.refreshHeatmap(nextProps, currentProps);
     })
   }
 
@@ -71,7 +72,7 @@ class Heatmap extends React.Component {
     return opts;
   }
 
-  refreshHeatmap(nextProps) {
+  refreshHeatmap(nextProps, currentProps) {
     if ('visible' in nextProps) {
       if (nextProps.visible) {
         this.heatmap.show();
@@ -83,7 +84,7 @@ class Heatmap extends React.Component {
     const opts = {};
     let optsRefresh = false;
     optsDetails.forEach((key) => {
-      if (nextProps[key] !== this.props[key]) {
+      if (nextProps[key] !== currentProps[key]) {
         optsRefresh = true;
         opts[key] = nextProps[key];
       }
@@ -92,7 +93,7 @@ class Heatmap extends React.Component {
       this.heatmap.setOptions(opts);
     }
 
-    if (nextProps.dataSet !== this.props.dataSet ) {
+    if (nextProps.dataSet !== currentProps.dataSet ) {
       this.heatmap.setDataSet(nextProps.dataSet);
     }
   }
