@@ -3,6 +3,10 @@
   "version": "0.0.4",
   "description": "Heatmap plugin for react-amap",
   "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioslh/react-amap-plugin-heatmap.git"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "prepublish": "npm run build"
