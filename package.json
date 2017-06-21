@@ -1,6 +1,6 @@
 {
   "name": "react-amap-plugin-heatmap",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Heatmap plugin for react-amap",
   "main": "./lib/heatmap.min.js",
   "repository": {
