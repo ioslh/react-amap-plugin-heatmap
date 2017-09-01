@@ -101,6 +101,12 @@ class Heatmap extends React.Component {
   render() {
     return null;
   }
+
+  componentWillUnmount() {
+    this.heatmap.hide();
+    this.heatmap.setMap(null);
+    delete this.heatmap;
+  }
 }
 
 module.exports = Heatmap;
